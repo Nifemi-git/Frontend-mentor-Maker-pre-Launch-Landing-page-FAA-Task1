@@ -16,6 +16,41 @@ p{
     line-height: 20px;
 }
 
+@keyframes toptext{
+    0%{opacity: 0; margin-top: -150px;}
+    100%{opacity: 1; margin-top: 0px}
+}
+
+@keyframes span{
+    0%{color: red;}
+    20%{color: #3ee9e5;}
+    40%{color: yellow;}
+    60%{color:green;}
+    80%{color: blue;}
+    100%{color: #3ee9e5;}
+}
+
+@keyframes imgL{
+    0%{right: 400px;}
+    100%{right: 0px;}
+}
+
+@keyframes imgR{
+    0%{left: 400px;}
+    100%{left: 0px;}
+}
+
+@keyframes feature1{
+    0%{opacity: 0; margin-top: -30%;}
+    100%{opacity: 1; margin-top: 0px;}
+}
+
+@keyframes feature2{
+    0%{opacity: 0; margin-bottom: -30%;}
+    100%{opacity: 1; margin-bottom: 0px;}
+}
+
+
 nav{
     width: 100%;
     height: 100px;
@@ -58,6 +93,7 @@ h2{
 
 #top-intro h2 span{
     color: #3ee9e5;
+    animation: span 10s ease-in-out 1s infinite;
 }
 
 #scroll-icon{
@@ -377,10 +413,19 @@ button{
         height: 445px;
     }
 
+    #left-image{
+        animation: imgL 1.5s ease-out;
+    }
+
+    #right-image{
+        animation: imgR 1.5s ease-out;
+    }
+
     #top{
         padding: 50px;
         align-self: start;
         height: 75%;
+        animation: toptext 1.5s ease-in-out;
     }
 
     #top-intro h2{
@@ -393,7 +438,7 @@ button{
         width: 80%;
     }
 
-    #scroll-icon{
+    #scroll-icon svg{
         margin-top: 70px;
     }
 
@@ -410,6 +455,7 @@ button{
         margin: 0px;
         padding: 0px;
         width: 215px;
+        opacity: 0;
     }
 
     .feature:nth-child(odd){
@@ -418,6 +464,20 @@ button{
 
     .feature:nth-child(even){
         align-self: end;
+    }
+
+    .animate1{
+        animation-name: feature1;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    .animate2{
+        animation-name: feature2;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
     }
 
     .feature-text{
@@ -441,8 +501,14 @@ button{
         width: 63%;
     }
 
+    @keyframes price{
+        0%{transform: scale(0.95, 0.95);}
+        100%{transform: scale(1.01, 1.01);}
+    }
+
     .pricing-container{
         width: 370px;
+        animation: price 2s ease-in-out infinite alternate;
     }
 
     footer{
@@ -450,5 +516,14 @@ button{
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    @keyframes btn{
+        0%{transform: rotate(10deg);}
+        100%{transform: rotate(-10deg);}
+    }
+
+    .btnAnimate{
+        animation: btn 0.1s linear 5 alternate;
     }
 }
